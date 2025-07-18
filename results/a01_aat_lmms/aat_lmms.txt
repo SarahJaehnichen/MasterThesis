@@ -1,0 +1,415 @@
+
+======================================
+=== AAT: Descriptive Analysis ========
+======================================
+
+Mean RT overall: 1000.28 ms; SD overall: 510.07 ms
+
+Gender		n	    mean RT in ms	SD
+male		4613	964.61			409.89
+female		4619	1035.91			591.38
+
+Mean RT in men was 71.29 ms or 6.88% lower than mean RT in women.
+Thus, men responded 71.29 ms or 6.88% faster than women.
+
+Valence		n	    mean RT in ms	SD
+positive	4642	979.84			556.14
+negative	4590	1020.96			457.93
+
+Mean RT to pleasant stimuli was 41.11 ms or 4.03% lower than to unpleasant ones.
+Thus, pleasant stimuli were reacted to 41.11 ms or 4.03% faster than unpleasant ones.
+
+Condition		n	    mean RT in ms	SD
+congruent		4656	939.71			353.42
+incongruent		4576	1061.92			624.76
+
+Mean RT to the congruent condition was 122.20 ms or 11.51% lower than to the incongruent one.
+Thus, in the congruent condition, participants reacted 122.20 ms or 11.51% faster than in the incongruent one.
+
+Gender	Valence		n	    mean RT in ms	SD
+male	positive	2325	931.32			371.16
+male	negative	2288	998.45			443.34
+female	positive	2317	1028.54			690.52
+female	negative	2302	1043.33			471.02
+
+Mean RT in men to pleasant stimuli was 67.14 ms or 6.72% lower than to unpleasant ones.
+Thus, men reacted 67.14 ms or 6.72% faster to pleasant than to unpleasant stimuli.
+
+Mean RT in women to pleasant stimuli was 14.79 ms or 1.42% lower than to unpleasant ones.
+Thus, women reacted 14.79 ms or 1.42% faster to pleasant than to unpleasant stimuli.
+
+Gender	Condition		n	    mean RT in ms	SD
+male	congruent		2311	913.16			310.88
+male	incongruent		2302	1016.26			484.14
+female	congruent		2345	965.87			389.14
+female	incongruent		2274	1108.13			737.63
+
+Mean RT in men in the congruent condition was 103.10 ms or 10.145% lower than in the incongruent one.
+Thus, men reacted 103.10 ms or 10.15% faster in the congruent than in the incongruent condition.
+
+Mean RT in women in the congruent condition was 142.25 ms or 12.84% lower than in the incongruent one.
+Thus, women reacted 142.25 ms or 12.84% faster in the congruent than in the incongruent condition.
+
+=================================================
+=== LMM AAT - GENDER, VALENCE, CONDITION ========
+=================================================
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            9232
+    Fixed effects coefficients           6
+    Random effects coefficients        148
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 5 predictors.
+
+Model fit statistics:
+    AIC       BIC       LogLikelihood
+    -12991    -12927    6504.4       
+
+
+    Deviance
+    -13009  
+
+Fixed effects coefficients (95% CIs):
+    Name                                     
+    {'(Intercept)'                      }    
+    {'Gender_female'                    }    
+    {'Valence_negative'                 }    
+    {'Condition_congruent'              }    
+    {'Gender_female:Valence_negative'   }    
+    {'Gender_female:Condition_congruent'}    
+
+
+    Estimate      SE           tStat  
+     -0.025897    0.0096936    -2.6716
+      0.013011    0.0092469     1.4071
+     0.0088743     0.003154     2.8137
+     -0.020602    0.0012233    -16.841
+    -0.0051395    0.0012189    -4.2163
+    -0.0028928    0.0012232    -2.3649
+
+
+    DF      pValue        Lower     
+    9226     0.0075633     -0.044899
+    9226       0.15944    -0.0051149
+    9226     0.0049076     0.0026919
+    9226    1.0484e-62        -0.023
+    9226    2.5068e-05    -0.0075289
+    9226      0.018056    -0.0052906
+
+
+    Upper     
+    -0.0068954
+      0.031137
+      0.015057
+     -0.018204
+    -0.0027501
+     -0.000495
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (60 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.071001    0.059178    0.085186
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.027285    0.022894    0.032517
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.117   
+
+
+    Lower      Upper  
+    0.11531    0.11871
+
+
+
+===Transformed Estimates===
+
+---Random Effects---
+Participant: Estimate = 0.0710, SD percentage = 17.76%, SD = 167.33 ms
+Picture: Estimate = 0.0273, SD percentage = 6.48%, SD = 61.09 ms
+Residual: Estimate = 0.1170, SD percentage = 30.92%, SD = 291.28 ms
+
+
+---Fixed Effects---
+(Intercept): beta = -0.0259, 10^beta = 0.9421, RT = 942.113 ms, deltaRT = 0.000 ms, diff percentage = 0.000%
+Gender_female: beta = 0.0130, 10^beta = 0.9708, RT = 970.765 ms, deltaRT = 28.652 ms, diff percentage = 3.041%
+Valence_negative: beta = 0.0089, 10^beta = 0.9616, RT = 961.562 ms, deltaRT = 19.449 ms, diff percentage = 2.064%
+Condition_congruent: beta = -0.0206, 10^beta = 0.8985, RT = 898.464 ms, deltaRT = -43.649 ms, diff percentage = -4.633%
+Gender_female:Valence_negative: beta = -0.0051, 10^beta = 0.9791, RT = 979.149 ms, deltaRT = -11.656 ms, diff percentage = -1.237%
+Gender_female:Condition_congruent: beta = -0.0029, 10^beta = 0.9196, RT = 919.642 ms, deltaRT = -6.146 ms, diff percentage = -0.652%
+
+=====================================================
+=== LMM AAT - GENDER-SPECIFIC: VALENCE, CONDITION ===
+=====================================================
+
+-------------------------------------------------------
+--- LMM AAT - MALE PARTICIPANTS: VALENCE, CONDITION ---
+-------------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4613
+    Fixed effects coefficients           3
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6568.7    -6530.1    3290.4       
+
+
+    Deviance
+    -6580.7 
+
+Fixed effects coefficients (95% CIs):
+    Name                       
+    {'(Intercept)'        }    
+    {'Valence_negative'   }    
+    {'Condition_congruent'}    
+
+
+    Estimate     SE           tStat  
+    -0.039148     0.012639    -3.0973
+       0.0139     0.003226     4.3086
+    -0.017918    0.0017141    -10.453
+
+
+    DF      pValue        Lower    
+    4610     0.0019647    -0.063927
+    4610    1.6771e-05     0.007575
+    4610    2.7118e-25    -0.021279
+
+
+    Upper    
+    -0.014369
+     0.020224
+    -0.014558
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.066936    0.051711    0.086642
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.025683    0.020855    0.031628
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11566 
+
+
+    Lower      Upper  
+    0.11329    0.11807
+
+
+
+---------------------------------------------------------
+--- LMM AAT - FEMALE PARTICIPANTS: VALENCE, CONDITION ---
+---------------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4619
+    Fixed effects coefficients           3
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6357.5    -6318.9    3184.8       
+
+
+    Deviance
+    -6369.5 
+
+Fixed effects coefficients (95% CIs):
+    Name                       
+    {'(Intercept)'        }    
+    {'Valence_negative'   }    
+    {'Condition_congruent'}    
+
+
+    Estimate     SE           tStat   
+    -0.012782     0.014112    -0.90578
+    0.0036616     0.003546      1.0326
+    -0.023646    0.0017551     -13.473
+
+
+    DF      pValue        Lower     
+    4616        0.3651     -0.040447
+    4616       0.30184    -0.0032902
+    4616    1.3161e-40     -0.027087
+
+
+    Upper    
+     0.014883
+     0.010613
+    -0.020205
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.074812    0.057846    0.096755
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.028968    0.023794    0.035268
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11821 
+
+
+    Lower     Upper  
+    0.1158    0.12068
+
+
+
+---------------------------------------------------------
+--- LMM AAT - PLEASANT STIMULI: GENDER, CONDITION ---
+---------------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4642
+    Fixed effects coefficients           4
+    Random effects coefficients        104
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6576.3    -6531.2    3295.1       
+
+
+    Deviance
+    -6590.3 
+
+Fixed effects coefficients (95% CIs):
+    Name                                     
+    {'(Intercept)'                      }    
+    {'Gender_female'                    }    
+    {'Condition_congruent'              }    
+    {'Gender_female:Condition_congruent'}    
+
+
+    Estimate      SE           tStat  
+     -0.034812    0.0097985    -3.5528
+      0.018247    0.0093644     1.9485
+     -0.020637    0.0017047    -12.106
+    -0.0040442    0.0017055    -2.3713
+
+
+    DF      pValue        Lower      
+    4638    0.00038489      -0.054022
+    4638      0.051414    -0.00011205
+    4638    3.0916e-33      -0.023979
+    4638      0.017765     -0.0073878
+
+
+    Upper      
+      -0.015603
+       0.036605
+      -0.017295
+    -0.00070069
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (60 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.071331    0.059277    0.085838
+
+Group: Picture (44 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.019129    0.014397    0.025415
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11565 
+
+
+    Lower     Upper  
+    0.1133    0.11806
+
+

@@ -1,0 +1,856 @@
+
+======================================
+=== Gender-Specific LMMs AAT + SAM ===
+======================================
+
+-----------------------------------------------
+--- MALE PARTICIPANTS: PLEASURE + CONDITION ---
+-----------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4613
+    Fixed effects coefficients           3
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6566.3    -6527.6    3289.1       
+
+
+    Deviance
+    -6578.3 
+
+Fixed effects coefficients (95% CIs):
+    Name                         
+    {'(Intercept)'          }    
+    {'Condition_incongruent'}    
+    {'pleasure_mean_male'   }    
+
+
+    Estimate      SE           tStat  
+     -0.028731     0.014643    -1.9621
+      0.035824    0.0034286     10.449
+    -0.0058529    0.0014806    -3.9532
+
+
+    DF      pValue        Lower     
+    4610      0.049812     -0.057438
+    4610    2.8368e-25      0.029103
+    4610    7.8272e-05    -0.0087555
+
+
+    Upper      
+    -2.3548e-05
+       0.042546
+     -0.0029503
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper  
+    0.066949    0.051722    0.08666
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.026167    0.021287    0.032165
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11566 
+
+
+    Lower      Upper  
+    0.11329    0.11807
+
+
+
+-------------------------------------------------
+--- FEMALE PARTICIPANTS: PLEASURE + CONDITION ---
+-------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4619
+    Fixed effects coefficients           3
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6357.5    -6318.9    3184.8       
+
+
+    Deviance
+    -6369.5 
+
+Fixed effects coefficients (95% CIs):
+    Name                         
+    {'(Intercept)'          }    
+    {'Condition_incongruent'}    
+    {'pleasure_mean_female' }    
+
+
+    Estimate      SE           tStat  
+     -0.029781     0.015558    -1.9142
+      0.047305    0.0035103     13.476
+    -0.0014657    0.0013923    -1.0527
+
+
+    DF      pValue        Lower     
+    4616      0.055654     -0.060282
+    4616    1.2538e-40      0.040423
+    4616       0.29252    -0.0041953
+
+
+    Upper     
+    0.00071963
+      0.054187
+     0.0012639
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.074811    0.057845    0.096754
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.028958    0.023784    0.035257
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11821 
+
+
+    Lower     Upper  
+    0.1158    0.12068
+
+
+
+----------------------------------------------
+--- MALE PARTICIPANTS: AROUSAL + CONDITION ---
+----------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4613
+    Fixed effects coefficients           3
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6561.4    -6522.8    3286.7       
+
+
+    Deviance
+    -6573.4 
+
+Fixed effects coefficients (95% CIs):
+    Name                         
+    {'(Intercept)'          }    
+    {'Condition_incongruent'}    
+    {'arousal_mean_male'    }    
+
+
+    Estimate     SE          tStat  
+    -0.099332    0.018467    -5.3788
+     0.035844    0.003429     10.453
+    0.0090896    0.002864     3.1737
+
+
+    DF      pValue        Lower    
+    4610     7.868e-08     -0.13554
+    4610    2.7166e-25     0.029121
+    4610     0.0015147    0.0034748
+
+
+    Upper    
+    -0.063127
+     0.042566
+     0.014704
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.066945    0.051718    0.086654
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.027176    0.022199    0.033269
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11566 
+
+
+    Lower      Upper  
+    0.11329    0.11807
+
+
+
+------------------------------------------------
+--- FEMALE PARTICIPANTS: AROUSAL + CONDITION ---
+------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4619
+    Fixed effects coefficients           3
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6356.5    -6317.8    3184.2       
+
+
+    Deviance
+    -6368.5 
+
+Fixed effects coefficients (95% CIs):
+    Name                         
+    {'(Intercept)'          }    
+    {'Condition_incongruent'}    
+    {'arousal_mean_female'  }    
+
+
+    Estimate      SE           tStat  
+     -0.038574     0.018879    -2.0433
+      0.047293    0.0035104     13.472
+    0.00042757    0.0024756    0.17271
+
+
+    DF      pValue        Lower     
+    4616      0.041082     -0.075585
+    4616    1.3174e-40      0.040411
+    4616       0.86288    -0.0044258
+
+
+    Upper     
+    -0.0015631
+      0.054175
+      0.005281
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.074822    0.057854    0.096768
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.029187    0.023988    0.035512
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11821 
+
+
+    Lower     Upper  
+    0.1158    0.12068
+
+
+
+------------------------------------------------
+--- MALE PARTICIPANTS: DOMINANCE + CONDITION ---
+------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4613
+    Fixed effects coefficients           3
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC      LogLikelihood
+    -6568.6    -6530    3290.3       
+
+
+    Deviance
+    -6580.6 
+
+Fixed effects coefficients (95% CIs):
+    Name                         
+    {'(Intercept)'          }    
+    {'Condition_incongruent'}    
+    {'dominance_mean_male'  }    
+
+
+    Estimate      SE           tStat   
+    -0.0074757     0.017206    -0.43448
+      0.035812    0.0034284      10.446
+    -0.0097645    0.0022736     -4.2947
+
+
+    DF      pValue        Lower    
+    4610       0.66396    -0.041208
+    4610    2.9266e-25     0.029091
+    4610    1.7855e-05    -0.014222
+
+
+    Upper     
+      0.026257
+      0.042533
+    -0.0053071
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.066935    0.051711    0.086641
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.025663    0.020825    0.031625
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11566 
+
+
+    Lower      Upper  
+    0.11329    0.11808
+
+
+
+--------------------------------------------------
+--- FEMALE PARTICIPANTS: DOMINANCE + CONDITION ---
+--------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4619
+    Fixed effects coefficients           3
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6357.2    -6318.5    3184.6       
+
+
+    Deviance
+    -6369.2 
+
+Fixed effects coefficients (95% CIs):
+    Name                         
+    {'(Intercept)'          }    
+    {'Condition_incongruent'}    
+    {'dominance_mean_female'}    
+
+
+    Estimate      SE           tStat   
+     -0.027521     0.017691     -1.5557
+      0.047293    0.0035103      13.473
+    -0.0019434    0.0022955    -0.84662
+
+
+    DF      pValue        Lower     
+    4616       0.11985     -0.062204
+    4616    1.3129e-40      0.040411
+    4616       0.39725    -0.0064436
+
+
+    Upper    
+    0.0071613
+     0.054175
+    0.0025568
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.074815    0.057848    0.096758
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.029041    0.023858    0.035349
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11821 
+
+
+    Lower     Upper  
+    0.1158    0.12068
+
+
+
+---------------------------------------------------------
+--- MALE PARTICIPANTS: AROUSAL * PLEASURE + CONDITION ---
+---------------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4613
+    Fixed effects coefficients           5
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 5 predictors.
+
+Model fit statistics:
+    AIC        BIC      LogLikelihood
+    -6564.5    -6513    3290.2       
+
+
+    Deviance
+    -6580.5 
+
+Fixed effects coefficients (95% CIs):
+    Name                                        
+    {'(Intercept)'                         }    
+    {'Condition_incongruent'               }    
+    {'pleasure_mean_male'                  }    
+    {'arousal_mean_male'                   }    
+    {'pleasure_mean_male:arousal_mean_male'}    
+
+
+    Estimate     SE           tStat  
+     0.030023     0.054913    0.54675
+     0.035826    0.0034284      10.45
+    -0.018446    0.0090358    -2.0414
+    -0.011825    0.0096448    -1.2261
+    0.0027987     0.001884     1.4855
+
+
+    DF      pValue        Lower      
+    4608       0.58458      -0.077631
+    4608    2.8087e-25       0.029105
+    4608      0.041264      -0.036161
+    4608       0.22024      -0.030733
+    4608       0.13748    -0.00089487
+
+
+    Upper      
+        0.13768
+       0.042547
+    -0.00073159
+      0.0070832
+      0.0064922
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.066955    0.051727    0.086667
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.025733    0.020899    0.031685
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11566 
+
+
+    Lower      Upper  
+    0.11329    0.11807
+
+
+
+-----------------------------------------------------------
+--- FEMALE PARTICIPANTS: AROUSAL * PLEASURE + CONDITION ---
+-----------------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4619
+    Fixed effects coefficients           5
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 5 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6361.1    -6309.6    3188.6       
+
+
+    Deviance
+    -6377.1 
+
+Fixed effects coefficients (95% CIs):
+    Name                                            
+    {'(Intercept)'                             }    
+    {'Condition_incongruent'                   }    
+    {'pleasure_mean_female'                    }    
+    {'arousal_mean_female'                     }    
+    {'pleasure_mean_female:arousal_mean_female'}    
+
+
+    Estimate     SE           tStat  
+      0.09123     0.047308     1.9284
+     0.047311    0.0035094     13.481
+    -0.022554    0.0078604    -2.8693
+    -0.020226    0.0072706    -2.7819
+    0.0038718    0.0015907     2.4341
+
+
+    DF      pValue        Lower     
+    4614      0.053865    -0.0015168
+    4614    1.1754e-40      0.040431
+    4614     0.0041329     -0.037964
+    4614     0.0054254      -0.03448
+    4614      0.014967    0.00075337
+
+
+    Upper     
+       0.18398
+      0.054191
+    -0.0071435
+    -0.0059725
+     0.0069902
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.074809    0.057844    0.096751
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.027363    0.022354    0.033494
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11821 
+
+
+    Lower      Upper  
+    0.11579    0.12068
+
+
+
+-----------------------------------------------------------
+--- MALE PARTICIPANTS: DOMINANCE * PLEASURE + CONDITION ---
+-----------------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4613
+    Fixed effects coefficients           5
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 5 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6566.6    -6515.1    3291.3       
+
+
+    Deviance
+    -6582.6 
+
+Fixed effects coefficients (95% CIs):
+    Name                                          
+    {'(Intercept)'                           }    
+    {'Condition_incongruent'                 }    
+    {'pleasure_mean_male'                    }    
+    {'dominance_mean_male'                   }    
+    {'pleasure_mean_male:dominance_mean_male'}    
+
+
+    Estimate      SE           tStat   
+     -0.064395     0.047421     -1.3579
+      0.035806    0.0034282      10.445
+      0.018332     0.013225      1.3861
+    0.00078416     0.011132    0.070441
+    -0.0030991    0.0022149     -1.3992
+
+
+    DF      pValue        Lower     
+    4608       0.17455      -0.15736
+    4608    2.9594e-25      0.029085
+    4608       0.16577    -0.0075958
+    4608       0.94385      -0.02104
+    4608       0.16182    -0.0074413
+
+
+    Upper    
+     0.028573
+     0.042527
+     0.044261
+     0.022608
+    0.0012432
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper  
+    0.066942    0.051716    0.08665
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper 
+    0.025278    0.020481    0.0312
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11566 
+
+
+    Lower      Upper  
+    0.11329    0.11807
+
+
+
+-------------------------------------------------------------
+--- FEMALE PARTICIPANTS: DOMINANCE * PLEASURE + CONDITION ---
+-------------------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4619
+    Fixed effects coefficients           5
+    Random effects coefficients        118
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 5 predictors.
+
+Model fit statistics:
+    AIC        BIC        LogLikelihood
+    -6362.3    -6310.8    3189.1       
+
+
+    Deviance
+    -6378.3 
+
+Fixed effects coefficients (95% CIs):
+    Name                                              
+    {'(Intercept)'                               }    
+    {'Condition_incongruent'                     }    
+    {'pleasure_mean_female'                      }    
+    {'dominance_mean_female'                     }    
+    {'pleasure_mean_female:dominance_mean_female'}    
+
+
+    Estimate      SE           tStat  
+      -0.11436     0.033276    -3.4366
+      0.047236    0.0035095     13.459
+      0.033819      0.01344     2.5163
+      0.017224    0.0085831     2.0067
+    -0.0062891    0.0021169    -2.9709
+
+
+    DF      pValue        Lower     
+    4614    0.00059431      -0.17959
+    4614    1.5636e-40      0.040356
+    4614      0.011894       0.00747
+    4614      0.044835    0.00039714
+    4614     0.0029848     -0.010439
+
+
+    Upper     
+     -0.049119
+      0.054117
+      0.060168
+      0.034051
+    -0.0021389
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (30 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.074815    0.057848    0.096758
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2                  Type       
+    {'(Intercept)'}        {'std'}    
+
+
+    Estimate    Lower       Upper   
+    0.027116    0.022131    0.033225
+
+Group: Error
+    Name               Estimate
+    {'Res Std'}        0.11821 
+
+
+    Lower      Upper  
+    0.11579    0.12068
+
+

@@ -1,0 +1,28 @@
+
+=====================================================================
+=== Regression Coefficients for Arousal/ Dominance - RT by Gender ===
+=====================================================================
+
+--- Arousal: Female Model Comparison ---
+Degree 1: R² = 0.000 | AIC = -17856.00 | BIC = -17843.13
+Degree 2: R² = 0.001 | AIC = -17859.94 | BIC = -17840.62
+Degree 3: R² = 0.001 | AIC = -17858.08 | BIC = -17832.33
+Best degree based on AIC: 2 
+
+--- Arousal: Male Model Comparison ---
+Degree 1: R² = 0.006 | AIC = -18319.57 | BIC = -18306.69
+Degree 2: R² = 0.006 | AIC = -18319.99 | BIC = -18300.68
+Degree 3: R² = 0.006 | AIC = -18318.21 | BIC = -18292.47
+Best degree based on AIC: 2 
+
+--- Dominance: Female Model Comparison ---
+Degree 1: R² = 0.001 | AIC = -17858.74 | BIC = -17845.86
+Degree 2: R² = 0.005 | AIC = -17876.80 | BIC = -17857.48
+Degree 3: R² = 0.005 | AIC = -17874.82 | BIC = -17849.07
+Best degree based on AIC: 2 
+
+--- Dominance: Male Model Comparison ---
+Degree 1: R² = 0.010 | AIC = -18339.79 | BIC = -18326.91
+Degree 2: R² = 0.011 | AIC = -18341.83 | BIC = -18322.52
+Degree 3: R² = 0.011 | AIC = -18339.85 | BIC = -18314.10
+Best degree based on AIC: 2 

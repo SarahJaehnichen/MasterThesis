@@ -1,0 +1,60 @@
+
+--- Affective Experience Dimensions Correlations ---
+
+Pleasure vs. Arousal:     r = -0.49,   p = 0.0000
+Pleasure vs. Dominance:   r = 0.65,   p = 0.0000
+Arousal vs. Dominance:    r = -0.56,   p = 0.0000
+
+
+--- Correlations by Valence ---
+
+Positive: 
+Pleasure vs. Arousal:     r = 0.01,   p = 0.7447
+Pleasure vs. Dominance:   r = 0.23,   p = 0.0000
+Arousal vs. Dominance:    r = -0.32,   p = 0.0000
+
+Negative: 
+Pleasure vs. Arousal:     r = -0.51,   p = 0.0000
+Pleasure vs. Dominance:   r = 0.50,   p = 0.0000
+Arousal vs. Dominance:    r = -0.56,   p = 0.0000
+
+
+--- Correlations by Gender ---
+
+Women: 
+Pleasure vs. Arousal:     r = -0.53,   p = 0.0000
+Pleasure vs. Dominance:     r = 0.70,   p = 0.0000
+Dominance vs. Arousal:     r = -0.59,   p = 0.0000
+
+Men: 
+Pleasure vs. Arousal:     r = -0.43,   p = 0.0000
+Pleasure vs. Dominance:     r = 0.58,   p = 0.0000
+Dominance vs. Arousal:     r = -0.53,   p = 0.0000
+
+
+--- Correlations by Valence and Gender ---
+
+POSITIVE:
+
+Women: 
+Pleasure vs. Arousal:     r = -0.03,   p = 0.3155
+Pleasure vs. Dominance:     r = 0.30,   p = 0.0000
+Arousal vs. Dominance:     r = -0.25,   p = 0.0000
+
+Men: 
+Pleasure vs. Arousal:     r = 0.05,   p = 0.0732
+Pleasure vs. Dominance:     r = 0.16,   p = 0.0000
+Dominance vs. Arousal:     r = -0.41,   p = 0.0000
+
+
+NEGATIVE:
+
+Women:
+Pleasure vs. Arousal:     r = -0.55,   p = 0.0000
+Pleasure vs. Dominance:     r = 0.56,   p = 0.0000
+Dominance vs. Arousal:     r = -0.64,   p = 0.0000
+
+Men:
+Pleasure vs. Arousal:     r = -0.45,   p = 0.0000
+Pleasure vs. Dominance:     r = 0.42,   p = 0.0000
+Dominance vs. Arousal:     r = -0.45,   p = 0.0000
