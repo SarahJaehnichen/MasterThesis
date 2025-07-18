@@ -2,6 +2,8 @@
 
 %% Setup and create folder
 
+resultsFolder = 'results/a02_sam_analysis';
+
 figuresFolder = fullfile(resultsFolder, 'figures_sam_dist');
 if ~exist(figuresFolder, 'dir')
     mkdir(figuresFolder);
