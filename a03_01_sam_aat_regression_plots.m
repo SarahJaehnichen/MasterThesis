@@ -1,0 +1,523 @@
+%% Comparing different regression models to find the best fitting coefficient
+%  to plot LogRTs against Arousal and Dominance
+%  Plotting LogRTs against Pleasure, Arousal and Dominance by gender and
+%  valence
+
+%% Setup and create folders
+resultsFolder = 'results/a03_sam_aat_analysis';
+figuresFolder = fullfile(resultsFolder, 'figures_sam_aat_regression');
+if ~exist(resultsFolder, 'dir')
+    mkdir(resultsFolder);
+end
+if ~exist(figuresFolder, 'dir')
+    mkdir(figuresFolder);
+end
+
+% File path for the text file and open file for writing
+txtFile = fullfile(resultsFolder, 'sam_aat_regression_ModelComp.txt');
+fileID = fopen(txtFile, 'w');
+
+%% Start file, initialize
+
+fprintf(fileID, '\n=====================================================================\n');
+fprintf(fileID, '=== Regression Coefficients for Arousal/ Dominance - RT by Gender ===\n');
+fprintf(fileID, '=====================================================================\n');
+
+bestAIC_f = Inf;
+bestAIC_m = Inf;
+
+img.Pic = str2double(string(img.Picture));
+
+x_f = all_female.arousal_mean_female;
+y_f = all_female.LogRT;
+
+x_m = all_male.arousal_mean_male;
+y_m = all_male.LogRT;
+
+xx_f = linspace(min(x_f), max(x_f), 100);
+xx_m = linspace(min(x_m), max(x_m), 100);
+
+%% Plot arousal, Log RT data and regression lines for female participants 
+%  and calculate model fit statistics. Remember coefficient with best AIC.
+
+f = figure; hold on;
+scatter(x_f, y_f, 40, 'o', 'MarkerEdgeColor', femaleColor, 'DisplayName', 'Arousal: Data');
+
+fprintf(fileID, '\n--- Arousal: Female Model Comparison ---\n');
+
+for d = 1:3
+
+    pf = polyfit(x_f, y_f, d);
+    yfit = polyval(pf, xx_f);
+    yhat = polyval(pf, x_f); % für AIC/BIC
+    [AIC, BIC] = calcAICBIC(y_f, yhat, d + 1);
+    R2 = 1 - sum((y_f - yhat).^2) / sum((y_f - mean(y_f)).^2);
+    
+    fprintf(fileID, 'Degree %d: R² = %.3f | AIC = %.2f | BIC = %.2f\n', d, R2, AIC, BIC);
+
+    if AIC < bestAIC_f
+        bestAIC_f = AIC;
+        bestDegree_f = d;
+    end
+    
+    plot(xx_f, yfit, 'Color', femaleColor, ...
+        'LineWidth', 1.5 + 0.5*d, ...
+        'DisplayName', sprintf('Arousal: Poly%d (R²=%.2f)', d, R2));
+
+end
+
+fprintf(fileID, 'Best degree based on AIC: %d \n', bestDegree_f);
+
+xlabel('Arousal');
+ylabel('Log RT');
+title('Regression Fit Comparison: Arousal vs. RT (Women)');
+legend('Location', 'best');
+grid on;
+
+exportgraphics(f, fullfile(figuresFolder, 'regression_fit_arousal_RT_women.png'), 'Resolution', 300);
+
+%% Plot arousal, Log RT data and regression lines for male participants 
+%  and calculate model fit statistics. Remember coefficient with best AIC.
+
+f = figure; hold on;
+scatter(x_m, y_m, 40, 'o', 'MarkerEdgeColor', maleColor, 'DisplayName', 'Arousal: Data');
+
+fprintf(fileID, '\n--- Arousal: Male Model Comparison ---\n');
+
+for d = 1:3
+    
+    pf = polyfit(x_m, y_m, d);
+    yfit = polyval(pf, xx_m);
+    yhat = polyval(pf, x_m); % für AIC/BIC
+    [AIC, BIC] = calcAICBIC(y_m, yhat, d + 1);
+    R2 = 1 - sum((y_m - yhat).^2) / sum((y_m - mean(y_m)).^2);
+    
+    fprintf(fileID, 'Degree %d: R² = %.3f | AIC = %.2f | BIC = %.2f\n', d, R2, AIC, BIC);
+    
+    if AIC < bestAIC_m
+        bestAIC_m = AIC;
+        bestDegree_m = d;
+    end
+
+    plot(xx_m, yfit, 'Color', maleColor, ...
+        'LineWidth', 1.5 + 0.5*d, ...
+        'DisplayName', sprintf('Arousal: Poly%d (R²=%.2f)', d, R2));
+
+end
+
+fprintf(fileID, 'Best degree based on AIC: %d \n', bestDegree_m);
+
+xlabel('Arousal');
+ylabel('Log RT');
+title('Regression Fit Comparison: Arousal vs. RT (Men)');
+legend('Location', 'best');
+grid on;
+
+exportgraphics(f, fullfile(figuresFolder, 'regression_fit_arousal_RT_men.png'), 'Resolution', 300);
+
+%% Create plot showing LogRTs against arousal by gender and valence
+%  with pictures as data points, and regression lines
+
+% variables to identify images that had significant effects in the u tests
+sigIdx_pos = (img.pFDR_pleasure_pos <= 0.05) | (img.pFDR_arousal_pos <= 0.05) | (img.pFDR_dominance_pos <= 0.05);
+sigIdx_neg = (img.pFDR_pleasure_neg <= 0.05) | (img.pFDR_arousal_neg <= 0.05) | (img.pFDR_dominance_neg <= 0.05);
+
+% Scatterplot for plotting LogRTs against arousal for all pictures
+% by gender
+
+f = figure;
+hold on;
+
+% female positive
+scatter(img.arousal_mean_female(img.Valence == 'positive'), ...
+        img.LogRT_mean_female(img.Valence == 'positive'), ...
+        50, 'o', ...
+        'MarkerEdgeColor', femaleColor, ...
+        'MarkerFaceColor', femaleColor, ...
+        'DisplayName', 'Female positive');
+
+% female negative
+scatter(img.arousal_mean_female(img.Valence == 'negative'), ...
+        img.LogRT_mean_female(img.Valence == 'negative'), ...
+        50, '^', ...
+        'MarkerEdgeColor', femaleColor, ...
+        'MarkerFaceColor', femaleColor, ...
+        'DisplayName', 'Female negative');
+
+% male positive
+scatter(img.arousal_mean_male(img.Valence == 'positive'), ...
+        img.LogRT_mean_male(img.Valence == 'positive'), ...
+        50, 'o', ...
+        'MarkerEdgeColor', maleColor, ...
+        'MarkerFaceColor', maleColor, ...
+        'DisplayName', 'Male positive');
+
+% male negative
+scatter(img.arousal_mean_male(img.Valence == 'negative'), ...
+        img.LogRT_mean_male(img.Valence == 'negative'), ...
+        50, '^', ...
+        'MarkerEdgeColor', maleColor, ...
+        'MarkerFaceColor', maleColor, ...
+        'DisplayName', 'Male negative');
+
+
+% highlight significant stimuli
+
+scatter(img.arousal_mean_female(sigIdx_pos), ...
+        img.LogRT_mean_female(sigIdx_pos), ...
+        70, 'o', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+scatter(img.arousal_mean_male(sigIdx_pos), ...
+        img.LogRT_mean_male(sigIdx_pos), ...
+        70, 'o', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+scatter(img.arousal_mean_female(sigIdx_neg), ...
+        img.LogRT_mean_female(sigIdx_neg), ...
+        70, '^', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+scatter(img.arousal_mean_male(sigIdx_neg), ...
+        img.LogRT_mean_male(sigIdx_neg), ...
+        70, '^', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+
+% Linear regression female participants
+femaleFit = polyfit(all_female.arousal_mean_female, all_female.LogRT, bestDegree_f);
+arousalRange = linspace(min(all_female.arousal_mean_female), max(all_female.arousal_mean_female), 100);
+femaleTrend = polyval(femaleFit, arousalRange);
+plot(arousalRange, femaleTrend, 'Color', femaleColor, 'LineWidth', 2, 'HandleVisibility', 'off');
+
+% Linear regression male participants
+maleFit = polyfit(all_male.arousal_mean_male, all_male.LogRT, bestDegree_m);
+arousalRange = linspace(min(all_female.arousal_mean_male), max(all_female.arousal_mean_male), 100);
+maleTrend = polyval(maleFit, arousalRange);
+plot(arousalRange, maleTrend, 'Color', maleColor, 'LineWidth', 2, 'HandleVisibility', 'off');
+
+% title, labels, and legend
+xlabel('Arousal');
+ylabel('Log Reaction Time');
+title('Log Reaction Times by Arousal and Gender');
+legend('Location', 'best');
+grid on;
+hold off;
+
+exportgraphics(f, fullfile(figuresFolder, 'Arousal_RT_plot.png'), 'Resolution', 300);
+
+
+%% Create plot showing LogRTs against pleasure by gender and valence
+%  with pictures as data points, and regression lines
+
+% Scatterplot for plotting LogRTs against pleasure for all pictures
+% by gender
+
+f = figure;
+hold on;
+
+% female positive
+scatter(img.pleasure_mean_female(img.Valence == 'positive'), ...
+        img.LogRT_mean_female(img.Valence == 'positive'), ...
+        50, 'o', ...
+        'MarkerEdgeColor', femaleColor, ...
+        'MarkerFaceColor', femaleColor, ...
+        'DisplayName', 'Female positive');
+
+% female negative
+scatter(img.pleasure_mean_female(img.Valence == 'negative'), ...
+        img.LogRT_mean_female(img.Valence == 'negative'), ...
+        50, '^', ...
+        'MarkerEdgeColor', femaleColor, ...
+        'MarkerFaceColor', femaleColor, ...
+        'DisplayName', 'Female negative');
+
+% male positive
+scatter(img.pleasure_mean_male(img.Valence == 'positive'), ...
+        img.LogRT_mean_male(img.Valence == 'positive'), ...
+        50, 'o', ...
+        'MarkerEdgeColor', maleColor, ...
+        'MarkerFaceColor', maleColor, ...
+        'DisplayName', 'Male positive');
+
+% male negative
+scatter(img.pleasure_mean_male(img.Valence == 'negative'), ...
+        img.LogRT_mean_male(img.Valence == 'negative'), ...
+        50, '^', ...
+        'MarkerEdgeColor', maleColor, ...
+        'MarkerFaceColor', maleColor, ...
+        'DisplayName', 'Male negative');
+
+
+% highlight significant stimuli
+
+scatter(img.pleasure_mean_female(sigIdx_pos), ...
+        img.LogRT_mean_female(sigIdx_pos), ...
+        70, 'o', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+scatter(img.pleasure_mean_male(sigIdx_pos), ...
+        img.LogRT_mean_male(sigIdx_pos), ...
+        70, 'o', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+scatter(img.pleasure_mean_female(sigIdx_neg), ...
+        img.LogRT_mean_female(sigIdx_neg), ...
+        70, '^', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+scatter(img.pleasure_mean_male(sigIdx_neg), ...
+        img.LogRT_mean_male(sigIdx_neg), ...
+        70, '^', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+
+% Linear regression female participants
+femaleFit = polyfit(all_female.pleasure_mean_female, all_female.LogRT, 1);
+pleasureRange = linspace(min(all_female.pleasure_mean_female), max(all_female.pleasure_mean_female), 100);
+femaleTrend = polyval(femaleFit, pleasureRange);
+plot(pleasureRange, femaleTrend, 'Color', femaleColor, 'LineWidth', 2, 'HandleVisibility', 'off');
+
+% Linear regression male participants
+maleFit = polyfit(all_male.pleasure_mean_male, all_male.LogRT, 1);
+pleasureRange = linspace(min(all_female.pleasure_mean_male), max(all_female.pleasure_mean_male), 100);
+maleTrend = polyval(maleFit, pleasureRange);
+plot(pleasureRange, maleTrend, 'Color', maleColor, 'LineWidth', 2, 'HandleVisibility', 'off');
+
+% title, labels, and legend
+xlabel('Pleasure');
+ylabel('Log Reaction Time');
+title('Log Reaction Times by Pleasure and Gender');
+legend('Location', 'best');
+grid on;
+hold off;
+
+exportgraphics(f, fullfile(figuresFolder, 'Pleasure_RT_plot.png'), 'Resolution', 300);
+
+
+%% Plot dominance, Log RT data and regression lines for female and male 
+%  participants and calculate model fit statistics. Remember coefficients 
+%  with best AIC.
+
+x_f = all_female.dominance_mean_female;
+y_f = all_female.LogRT;
+
+x_m = all_male.dominance_mean_male;
+y_m = all_male.LogRT;
+
+xx_f = linspace(min(x_f), max(x_f), 100);
+xx_m = linspace(min(x_m), max(x_m), 100);
+
+
+f = figure; hold on;
+scatter(x_f, y_f, 40, 'o', 'MarkerEdgeColor', femaleColor, 'DisplayName', 'Arousal: Data');
+
+fprintf(fileID, '\n--- Dominance: Female Model Comparison ---\n');
+
+for d = 1:3
+
+    pf = polyfit(x_f, y_f, d);
+    yfit = polyval(pf, xx_f);
+    yhat = polyval(pf, x_f); % für AIC/BIC
+    [AIC, BIC] = calcAICBIC(y_f, yhat, d + 1);
+    R2 = 1 - sum((y_f - yhat).^2) / sum((y_f - mean(y_f)).^2);
+    
+    fprintf(fileID, 'Degree %d: R² = %.3f | AIC = %.2f | BIC = %.2f\n', d, R2, AIC, BIC);
+
+    if AIC < bestAIC_f
+        bestAIC_f = AIC;
+        bestDegree_f = d;
+    end
+
+    plot(xx_f, yfit, 'Color', femaleColor, ...
+        'LineWidth', 1.5 + 0.5*d, ...
+        'DisplayName', sprintf('Dominance: Poly%d (R²=%.2f)', d, R2));
+
+end
+
+fprintf(fileID, 'Best degree based on AIC: %d \n', bestDegree_f);
+
+xlabel('Dominance');
+ylabel('Log RT');
+title('Regression Fit Comparison: Dominance vs. RT (Women)');
+legend('Location', 'best');
+grid on;
+
+exportgraphics(f, fullfile(figuresFolder, 'regression_fit_dominance_RT_women.png'), 'Resolution', 300);
+
+
+f = figure; hold on;
+scatter(x_m, y_m, 40, 'o', 'MarkerEdgeColor', maleColor, 'DisplayName', 'Arousal: Data');
+
+fprintf(fileID, '\n--- Dominance: Male Model Comparison ---\n');
+
+for d = 1:3
+
+    pf = polyfit(x_m, y_m, d);
+    yfit = polyval(pf, xx_m);
+    yhat = polyval(pf, x_m); % für AIC/BIC
+    [AIC, BIC] = calcAICBIC(y_m, yhat, d + 1);
+    R2 = 1 - sum((y_m - yhat).^2) / sum((y_m - mean(y_m)).^2);
+    
+    fprintf(fileID, 'Degree %d: R² = %.3f | AIC = %.2f | BIC = %.2f\n', d, R2, AIC, BIC);
+    
+    if AIC < bestAIC_m
+        bestAIC_m = AIC;
+        bestDegree_m = d;
+    end
+
+    plot(xx_m, yfit, 'Color', maleColor, ...
+        'LineWidth', 1.5 + 0.5*d, ...
+        'DisplayName', sprintf('Arousal: Poly%d (R²=%.2f)', d, R2));
+
+end
+
+fprintf(fileID, 'Best degree based on AIC: %d \n', bestDegree_m);
+
+xlabel('Dominance');
+ylabel('Log RT');
+title('Regression Fit Comparison: Dominance vs. RT (Men)');
+legend('Location', 'best');
+grid on;
+
+exportgraphics(f, fullfile(figuresFolder, 'regression_fit_dominance_RT_men.png'), 'Resolution', 300);
+
+
+%% Create plot showing LogRTs against dominance by gender and valence
+%  with pictures as data points, and regression lines
+
+% Scatterplot for plotting LogRTs against dominance for all pictures
+% by gender
+
+f = figure;
+hold on;
+
+% female positive
+scatter(img.dominance_mean_female(img.Valence == 'positive'), ...
+        img.LogRT_mean_female(img.Valence == 'positive'), ...
+        50, 'o', ...
+        'MarkerEdgeColor', femaleColor, ...
+        'MarkerFaceColor', femaleColor, ...
+        'DisplayName', 'Female positive');
+
+% female negative
+scatter(img.dominance_mean_female(img.Valence == 'negative'), ...
+        img.LogRT_mean_female(img.Valence == 'negative'), ...
+        50, '^', ...
+        'MarkerEdgeColor', femaleColor, ...
+        'MarkerFaceColor', femaleColor, ...
+        'DisplayName', 'Female negative');
+
+% male positive
+scatter(img.dominance_mean_male(img.Valence == 'positive'), ...
+        img.LogRT_mean_male(img.Valence == 'positive'), ...
+        50, 'o', ...
+        'MarkerEdgeColor', maleColor, ...
+        'MarkerFaceColor', maleColor, ...
+        'DisplayName', 'Male positive');
+
+% male negative
+scatter(img.dominance_mean_male(img.Valence == 'negative'), ...
+        img.LogRT_mean_male(img.Valence == 'negative'), ...
+        50, '^', ...
+        'MarkerEdgeColor', maleColor, ...
+        'MarkerFaceColor', maleColor, ...
+        'DisplayName', 'Male negative');
+
+
+% highlight significant stimuli
+
+scatter(img.dominance_mean_female(sigIdx_pos), ...
+        img.LogRT_mean_female(sigIdx_pos), ...
+        70, 'o', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off'); 
+
+scatter(img.dominance_mean_male(sigIdx_pos), ...
+        img.LogRT_mean_male(sigIdx_pos), ...
+        70, 'o', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+scatter(img.dominance_mean_female(sigIdx_neg), ...
+        img.LogRT_mean_female(sigIdx_neg), ...
+        70, '^', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off');
+
+scatter(img.dominance_mean_male(sigIdx_neg), ...
+        img.LogRT_mean_male(sigIdx_neg), ...
+        70, '^', ...
+        'MarkerEdgeColor', 'k', ...
+        'MarkerFaceColor', 'none', ...
+        'LineWidth', 1, ...
+        'HandleVisibility', 'off'); 
+
+
+% Linear regression female participants
+femaleFit = polyfit(all_female.dominance_mean_female, all_female.LogRT, bestDegree_f);
+dominanceRange = linspace(min(all_female.dominance_mean_female), max(all_female.dominance_mean_female), 100);
+femaleTrend = polyval(femaleFit, dominanceRange);
+plot(dominanceRange, femaleTrend, 'Color', femaleColor, 'LineWidth', 2, 'HandleVisibility', 'off');
+
+% Linear regression male participants
+maleFit = polyfit(all_male.dominance_mean_male, all_male.LogRT, bestDegree_m);
+dominanceRange = linspace(min(all_female.dominance_mean_male), max(all_female.dominance_mean_male), 100);
+maleTrend = polyval(maleFit, dominanceRange);
+plot(dominanceRange, maleTrend, 'Color', maleColor, 'LineWidth', 2, 'HandleVisibility', 'off');
+
+% title, labels, and legend
+xlabel('Dominance');
+ylabel('Log Reaction Time');
+title('Log Reaction Times by Dominance and Gender');
+legend('Location', 'best');
+grid on;
+hold off;
+
+exportgraphics(f, fullfile(figuresFolder, 'Dominance_RT_plot.png'), 'Resolution', 300);
+
+
+close all;
+
+
+%% Function to calculate AIC and BIC
+function [AIC, BIC] = calcAICBIC(y_true, y_pred, numParams)
+    n = length(y_true);
+    resid = y_true - y_pred;
+    RSS = sum(resid.^2);
+    sigma2 = RSS / n;
+    
+    % AIC & BIC
+    AIC = n * log(sigma2) + 2 * numParams;
+    BIC = n * log(sigma2) + numParams * log(n);
+end
