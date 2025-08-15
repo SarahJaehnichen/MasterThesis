@@ -425,4 +425,134 @@ histogram(res)
 title('Residuals Histogram')
 exportgraphics(f_aat_f_R, fullfile(figuresFolder, 'LME_AAT_positive_residuals_hist.png'), 'Resolution', 300);
 
+
+%% Effect-coded LMM for unpleasant stimuli data; effects of gender and condition on RTs in AAT
+fprintf(fileID, '\n---------------------------------------------------------\n');
+fprintf(fileID, '--- LMM AAT - UNPLEASANT STIMULI: GENDER, CONDITION ---\n');
+fprintf(fileID, '---------------------------------------------------------\n');
+
+lme_aat_neg = fitlme(aat_neg, 'LogRT ~ 1 + Condition * Gender + (1|Participant) + (1|Picture)', 'DummyVarCoding','effects');
+
+% Model summary and fit
+lme_aat_neg_disp = evalc('disp(lme_aat_neg)');
+clean_output = regexprep(lme_aat_neg_disp, '<.*?>', '');
+fprintf(fileID, '%s\n', clean_output);
+
+% Plot fitted vs observed values
+yfit = fitted(lme_aat_neg);
+ytrue = aat_neg.LogRT;
+f_aat_f_FO = figure;
+scatter(ytrue, yfit)
+xlabel('Observed')
+ylabel('Fitted')
+title('Fitted vs. Observed')
+grid on
+exportgraphics(f_aat_f_FO, fullfile(figuresFolder, 'LME_AAT_negative_fitted_vs_observed.png'), 'Resolution', 300);
+
+% Plot residuals against fitted values
+res = residuals(lme_aat_neg);
+yfit = fitted(lme_aat_neg);
+f_aat_f_RF = figure;
+scatter(yfit, res)
+xlabel('Fitted Values')
+ylabel('Residuals')
+title('Residuals vs. Fitted')
+refline(0,0); 
+grid on
+exportgraphics(f_aat_f_RF, fullfile(figuresFolder, 'LME_AAT_negative_residuals_vs_fitted.png'), 'Resolution', 300);
+
+% Residuals Histogram
+res = residuals(lme_aat_neg);
+f_aat_f_R = figure;
+histogram(res)
+title('Residuals Histogram')
+exportgraphics(f_aat_f_R, fullfile(figuresFolder, 'LME_AAT_negative_residuals_hist.png'), 'Resolution', 300);
+
+
+%% Effect-coded LMM for congruent trials; effects of gender and valence on RTs in AAT
+fprintf(fileID, '\n---------------------------------------------------\n');
+fprintf(fileID, '--- LMM AAT - CONGRUENT TRIALS: GENDER, VALENCE ---\n');
+fprintf(fileID, '---------------------------------------------------\n');
+
+lme_aat_con = fitlme(aat_con, 'LogRT ~ 1 + Valence * Gender + (1|Participant) + (1|Picture)', 'DummyVarCoding','effects');
+
+% Model summary and fit
+lme_aat_con_disp = evalc('disp(lme_aat_con)');
+clean_output = regexprep(lme_aat_con_disp, '<.*?>', '');
+fprintf(fileID, '%s\n', clean_output);
+
+% Plot fitted vs observed values
+yfit = fitted(lme_aat_con);
+ytrue = aat_con.LogRT;
+f = figure;
+scatter(ytrue, yfit)
+xlabel('Observed')
+ylabel('Fitted')
+title('Fitted vs. Observed')
+grid on
+exportgraphics(f, fullfile(figuresFolder, 'LME_AAT_con_fitted_vs_observed.png'), 'Resolution', 300);
+
+% Plot residuals against fitted values
+res = residuals(lme_aat_con);
+yfit = fitted(lme_aat_con);
+f = figure;
+scatter(yfit, res)
+xlabel('Fitted Values')
+ylabel('Residuals')
+title('Residuals vs. Fitted')
+refline(0,0); 
+grid on
+exportgraphics(f, fullfile(figuresFolder, 'LME_AAT_con_residuals_vs_fitted.png'), 'Resolution', 300);
+
+% Residuals Histogram
+res = residuals(lme_aat_con);
+f = figure;
+histogram(res)
+title('Residuals Histogram')
+exportgraphics(f, fullfile(figuresFolder, 'LME_AAT_con_residuals_hist.png'), 'Resolution', 300);
+
+
+%% Effect-coded LMM for incongruent trials; effects of gender and valence on RTs in AAT
+fprintf(fileID, '\n---------------------------------------------------\n');
+fprintf(fileID, '--- LMM AAT - INCONGRUENT TRIALS: GENDER, VALENCE ---\n');
+fprintf(fileID, '---------------------------------------------------\n');
+
+lme_aat_incon = fitlme(aat_incon, 'LogRT ~ 1 + Valence * Gender + (1|Participant) + (1|Picture)', 'DummyVarCoding','effects');
+
+% Model summary and fit
+lme_aat_incon_disp = evalc('disp(lme_aat_incon)');
+clean_output = regexprep(lme_aat_incon_disp, '<.*?>', '');
+fprintf(fileID, '%s\n', clean_output);
+
+% Plot fitted vs observed values
+yfit = fitted(lme_aat_incon);
+ytrue = aat_incon.LogRT;
+f = figure;
+scatter(ytrue, yfit)
+xlabel('Observed')
+ylabel('Fitted')
+title('Fitted vs. Observed')
+grid on
+exportgraphics(f, fullfile(figuresFolder, 'LME_AAT_incon_fitted_vs_observed.png'), 'Resolution', 300);
+
+% Plot residuals against fitted values
+res = residuals(lme_aat_incon);
+yfit = fitted(lme_aat_incon);
+f = figure;
+scatter(yfit, res)
+xlabel('Fitted Values')
+ylabel('Residuals')
+title('Residuals vs. Fitted')
+refline(0,0); 
+grid on
+exportgraphics(f, fullfile(figuresFolder, 'LME_AAT_incon_residuals_vs_fitted.png'), 'Resolution', 300);
+
+% Residuals Histogram
+res = residuals(lme_aat_incon);
+f = figure;
+histogram(res)
+title('Residuals Histogram')
+exportgraphics(f, fullfile(figuresFolder, 'LME_AAT_incon_residuals_hist.png'), 'Resolution', 300);
+
+
 close all;

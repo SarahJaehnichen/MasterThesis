@@ -66,8 +66,16 @@ Formula:
     Linear Mixed Formula with 5 predictors.
 
 Model fit statistics:
-    AIC       BIC       LogLikelihood
-    -12991    -12927    6504.4       
+    AIC   
+    -12991
+
+
+    BIC   
+    -12927
+
+
+    LogLikelihood
+    6504.4       
 
 
     Deviance
@@ -83,22 +91,58 @@ Fixed effects coefficients (95% CIs):
     {'Gender_female:Condition_congruent'}    
 
 
-    Estimate      SE           tStat  
-     -0.025897    0.0096936    -2.6716
-      0.013011    0.0092469     1.4071
-     0.0088743     0.003154     2.8137
-     -0.020602    0.0012233    -16.841
-    -0.0051395    0.0012189    -4.2163
-    -0.0028928    0.0012232    -2.3649
+    Estimate  
+     -0.025897
+      0.013011
+     0.0088743
+     -0.020602
+    -0.0051395
+    -0.0028928
 
 
-    DF      pValue        Lower     
-    9226     0.0075633     -0.044899
-    9226       0.15944    -0.0051149
-    9226     0.0049076     0.0026919
-    9226    1.0484e-62        -0.023
-    9226    2.5068e-05    -0.0075289
-    9226      0.018056    -0.0052906
+    SE       
+    0.0096936
+    0.0092469
+     0.003154
+    0.0012233
+    0.0012189
+    0.0012232
+
+
+    tStat  
+    -2.6716
+     1.4071
+     2.8137
+    -16.841
+    -4.2163
+    -2.3649
+
+
+    DF  
+    9226
+    9226
+    9226
+    9226
+    9226
+    9226
+
+
+    pValue    
+     0.0075633
+       0.15944
+     0.0049076
+    1.0484e-62
+    2.5068e-05
+      0.018056
+
+
+    Lower     
+     -0.044899
+    -0.0051149
+     0.0026919
+        -0.023
+    -0.0075289
+    -0.0052906
 
 
     Upper     
@@ -115,32 +159,64 @@ Group: Participant (60 Levels)
     {'(Intercept)'}    
 
 
-    Name2                  Type       
-    {'(Intercept)'}        {'std'}    
+    Name2              
+    {'(Intercept)'}    
 
 
-    Estimate    Lower       Upper   
-    0.071001    0.059178    0.085186
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.071001
+
+
+    Lower   
+    0.059178
+
+
+    Upper   
+    0.085186
 
 Group: Picture (88 Levels)
     Name1              
     {'(Intercept)'}    
 
 
-    Name2                  Type       
-    {'(Intercept)'}        {'std'}    
+    Name2              
+    {'(Intercept)'}    
 
 
-    Estimate    Lower       Upper   
-    0.027285    0.022894    0.032517
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.027285
+
+
+    Lower   
+    0.022894
+
+
+    Upper   
+    0.032517
 
 Group: Error
-    Name               Estimate
-    {'Res Std'}        0.117   
+    Name           
+    {'Res Std'}    
 
 
-    Lower      Upper  
-    0.11531    0.11871
+    Estimate
+    0.117   
+
+
+    Lower  
+    0.11531
+
+
+    Upper  
+    0.11871
 
 
 
@@ -180,8 +256,16 @@ Formula:
     Linear Mixed Formula with 4 predictors.
 
 Model fit statistics:
-    AIC        BIC        LogLikelihood
-    -6568.7    -6530.1    3290.4       
+    AIC    
+    -6568.7
+
+
+    BIC    
+    -6530.1
+
+
+    LogLikelihood
+    3290.4       
 
 
     Deviance
@@ -194,16 +278,40 @@ Fixed effects coefficients (95% CIs):
     {'Condition_congruent'}    
 
 
-    Estimate     SE           tStat  
-    -0.039148     0.012639    -3.0973
-       0.0139     0.003226     4.3086
-    -0.017918    0.0017141    -10.453
+    Estimate 
+    -0.039148
+       0.0139
+    -0.017918
 
 
-    DF      pValue        Lower    
-    4610     0.0019647    -0.063927
-    4610    1.6771e-05     0.007575
-    4610    2.7118e-25    -0.021279
+    SE       
+     0.012639
+     0.003226
+    0.0017141
+
+
+    tStat  
+    -3.0973
+     4.3086
+    -10.453
+
+
+    DF  
+    4610
+    4610
+    4610
+
+
+    pValue    
+     0.0019647
+    1.6771e-05
+    2.7118e-25
+
+
+    Lower    
+    -0.063927
+     0.007575
+    -0.021279
 
 
     Upper    
@@ -217,32 +325,64 @@ Group: Participant (30 Levels)
     {'(Intercept)'}    
 
 
-    Name2                  Type       
-    {'(Intercept)'}        {'std'}    
+    Name2              
+    {'(Intercept)'}    
 
 
-    Estimate    Lower       Upper   
-    0.066936    0.051711    0.086642
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.066936
+
+
+    Lower   
+    0.051711
+
+
+    Upper   
+    0.086642
 
 Group: Picture (88 Levels)
     Name1              
     {'(Intercept)'}    
 
 
-    Name2                  Type       
-    {'(Intercept)'}        {'std'}    
+    Name2              
+    {'(Intercept)'}    
 
 
-    Estimate    Lower       Upper   
-    0.025683    0.020855    0.031628
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.025683
+
+
+    Lower   
+    0.020855
+
+
+    Upper   
+    0.031628
 
 Group: Error
-    Name               Estimate
-    {'Res Std'}        0.11566 
+    Name           
+    {'Res Std'}    
 
 
-    Lower      Upper  
-    0.11329    0.11807
+    Estimate
+    0.11566 
+
+
+    Lower  
+    0.11329
+
+
+    Upper  
+    0.11807
 
 
 
@@ -262,8 +402,16 @@ Formula:
     Linear Mixed Formula with 4 predictors.
 
 Model fit statistics:
-    AIC        BIC        LogLikelihood
-    -6357.5    -6318.9    3184.8       
+    AIC    
+    -6357.5
+
+
+    BIC    
+    -6318.9
+
+
+    LogLikelihood
+    3184.8       
 
 
     Deviance
@@ -276,16 +424,40 @@ Fixed effects coefficients (95% CIs):
     {'Condition_congruent'}    
 
 
-    Estimate     SE           tStat   
-    -0.012782     0.014112    -0.90578
-    0.0036616     0.003546      1.0326
-    -0.023646    0.0017551     -13.473
+    Estimate 
+    -0.012782
+    0.0036616
+    -0.023646
 
 
-    DF      pValue        Lower     
-    4616        0.3651     -0.040447
-    4616       0.30184    -0.0032902
-    4616    1.3161e-40     -0.027087
+    SE       
+     0.014112
+     0.003546
+    0.0017551
+
+
+    tStat   
+    -0.90578
+      1.0326
+     -13.473
+
+
+    DF  
+    4616
+    4616
+    4616
+
+
+    pValue    
+        0.3651
+       0.30184
+    1.3161e-40
+
+
+    Lower     
+     -0.040447
+    -0.0032902
+     -0.027087
 
 
     Upper    
@@ -299,32 +471,64 @@ Group: Participant (30 Levels)
     {'(Intercept)'}    
 
 
-    Name2                  Type       
-    {'(Intercept)'}        {'std'}    
+    Name2              
+    {'(Intercept)'}    
 
 
-    Estimate    Lower       Upper   
-    0.074812    0.057846    0.096755
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.074812
+
+
+    Lower   
+    0.057846
+
+
+    Upper   
+    0.096755
 
 Group: Picture (88 Levels)
     Name1              
     {'(Intercept)'}    
 
 
-    Name2                  Type       
-    {'(Intercept)'}        {'std'}    
+    Name2              
+    {'(Intercept)'}    
 
 
-    Estimate    Lower       Upper   
-    0.028968    0.023794    0.035268
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.028968
+
+
+    Lower   
+    0.023794
+
+
+    Upper   
+    0.035268
 
 Group: Error
-    Name               Estimate
-    {'Res Std'}        0.11821 
+    Name           
+    {'Res Std'}    
 
 
-    Lower     Upper  
-    0.1158    0.12068
+    Estimate
+    0.11821 
+
+
+    Lower 
+    0.1158
+
+
+    Upper  
+    0.12068
 
 
 
@@ -344,8 +548,16 @@ Formula:
     Linear Mixed Formula with 4 predictors.
 
 Model fit statistics:
-    AIC        BIC        LogLikelihood
-    -6576.3    -6531.2    3295.1       
+    AIC    
+    -6576.3
+
+
+    BIC    
+    -6531.2
+
+
+    LogLikelihood
+    3295.1       
 
 
     Deviance
@@ -359,18 +571,46 @@ Fixed effects coefficients (95% CIs):
     {'Gender_female:Condition_congruent'}    
 
 
-    Estimate      SE           tStat  
-     -0.034812    0.0097985    -3.5528
-      0.018247    0.0093644     1.9485
-     -0.020637    0.0017047    -12.106
-    -0.0040442    0.0017055    -2.3713
+    Estimate  
+     -0.034812
+      0.018247
+     -0.020637
+    -0.0040442
 
 
-    DF      pValue        Lower      
-    4638    0.00038489      -0.054022
-    4638      0.051414    -0.00011205
-    4638    3.0916e-33      -0.023979
-    4638      0.017765     -0.0073878
+    SE       
+    0.0097985
+    0.0093644
+    0.0017047
+    0.0017055
+
+
+    tStat  
+    -3.5528
+     1.9485
+    -12.106
+    -2.3713
+
+
+    DF  
+    4638
+    4638
+    4638
+    4638
+
+
+    pValue    
+    0.00038489
+      0.051414
+    3.0916e-33
+      0.017765
+
+
+    Lower      
+      -0.054022
+    -0.00011205
+      -0.023979
+     -0.0073878
 
 
     Upper      
@@ -385,31 +625,525 @@ Group: Participant (60 Levels)
     {'(Intercept)'}    
 
 
-    Name2                  Type       
-    {'(Intercept)'}        {'std'}    
+    Name2              
+    {'(Intercept)'}    
 
 
-    Estimate    Lower       Upper   
-    0.071331    0.059277    0.085838
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.071331
+
+
+    Lower   
+    0.059277
+
+
+    Upper   
+    0.085838
 
 Group: Picture (44 Levels)
     Name1              
     {'(Intercept)'}    
 
 
-    Name2                  Type       
-    {'(Intercept)'}        {'std'}    
+    Name2              
+    {'(Intercept)'}    
 
 
-    Estimate    Lower       Upper   
-    0.019129    0.014397    0.025415
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.019129
+
+
+    Lower   
+    0.014397
+
+
+    Upper   
+    0.025415
 
 Group: Error
-    Name               Estimate
-    {'Res Std'}        0.11565 
+    Name           
+    {'Res Std'}    
 
 
-    Lower     Upper  
-    0.1133    0.11806
+    Estimate
+    0.11565 
+
+
+    Lower 
+    0.1133
+
+
+    Upper  
+    0.11806
+
+
+
+---------------------------------------------------------
+--- LMM AAT - UNPLEASANT STIMULI: GENDER, CONDITION ---
+---------------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4590
+    Fixed effects coefficients           4
+    Random effects coefficients        104
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC    
+    -6285.5
+
+
+    BIC    
+    -6240.5
+
+
+    LogLikelihood
+    3149.7       
+
+
+    Deviance
+    -6299.5 
+
+Fixed effects coefficients (95% CIs):
+    Name                                     
+    {'(Intercept)'                      }    
+    {'Gender_female'                    }    
+    {'Condition_congruent'              }    
+    {'Gender_female:Condition_congruent'}    
+
+
+    Estimate 
+    -0.016823
+    0.0077941
+    -0.020484
+    -0.001656
+
+
+    SE       
+     0.010687
+     0.009369
+    0.0017499
+    0.0017486
+
+
+    tStat   
+     -1.5742
+     0.83191
+     -11.706
+    -0.94705
+
+
+    DF  
+    4586
+    4586
+    4586
+    4586
+
+
+    pValue    
+       0.11551
+        0.4055
+    3.2986e-31
+       0.34366
+
+
+    Lower     
+     -0.037775
+     -0.010574
+     -0.023915
+    -0.0050841
+
+
+    Upper    
+    0.0041282
+     0.026162
+    -0.017053
+    0.0017721
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (60 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2              
+    {'(Intercept)'}    
+
+
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.071304
+
+
+    Lower   
+    0.059233
+
+
+    Upper   
+    0.085836
+
+Group: Picture (44 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2              
+    {'(Intercept)'}    
+
+
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.034101
+
+
+    Lower   
+    0.026942
+
+
+    Upper   
+    0.043161
+
+Group: Error
+    Name           
+    {'Res Std'}    
+
+
+    Estimate
+    0.11791 
+
+
+    Lower 
+    0.1155
+
+
+    Upper  
+    0.12038
+
+
+
+---------------------------------------------------
+--- LMM AAT - CONGRUENT TRIALS: GENDER, VALENCE ---
+---------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4656
+    Fixed effects coefficients           4
+    Random effects coefficients        148
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC    
+    -7387.6
+
+
+    BIC    
+    -7342.5
+
+
+    LogLikelihood
+    3700.8       
+
+
+    Deviance
+    -7401.6 
+
+Fixed effects coefficients (95% CIs):
+    Name                                  
+    {'(Intercept)'                   }    
+    {'Gender_female'                 }    
+    {'Valence_negative'              }    
+    {'Gender_female:Valence_negative'}    
+
+
+    Estimate  
+     -0.046699
+      0.010156
+     0.0090551
+    -0.0039371
+
+
+    SE       
+    0.0087233
+    0.0082504
+    0.0032314
+    0.0015537
+
+
+    tStat  
+    -5.3534
+      1.231
+     2.8022
+    -2.5341
+
+
+    DF  
+    4652
+    4652
+    4652
+    4652
+
+
+    pValue    
+    9.0492e-08
+        0.2184
+     0.0050962
+      0.011308
+
+
+    Lower     
+     -0.063801
+    -0.0060187
+       0.00272
+    -0.0069831
+
+
+    Upper      
+      -0.029597
+       0.026331
+        0.01539
+    -0.00089117
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (60 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2              
+    {'(Intercept)'}    
+
+
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.062764
+
+
+    Lower  
+    0.05213
+
+
+    Upper   
+    0.075567
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2              
+    {'(Intercept)'}    
+
+
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.026565
+
+
+    Lower   
+    0.021844
+
+
+    Upper   
+    0.032307
+
+Group: Error
+    Name           
+    {'Res Std'}    
+
+
+    Estimate
+    0.1055  
+
+
+    Lower  
+    0.10335
+
+
+    Upper 
+    0.1077
+
+
+
+---------------------------------------------------
+--- LMM AAT - INCONGRUENT TRIALS: GENDER, VALENCE ---
+---------------------------------------------------
+
+Linear mixed-effects model fit by ML
+
+Model information:
+    Number of observations            4576
+    Fixed effects coefficients           4
+    Random effects coefficients        148
+    Covariance parameters                3
+
+Formula:
+    Linear Mixed Formula with 4 predictors.
+
+Model fit statistics:
+    AIC  
+    -5821
+
+
+    BIC  
+    -5776
+
+
+    LogLikelihood
+    2917.5       
+
+
+    Deviance
+    -5835   
+
+Fixed effects coefficients (95% CIs):
+    Name                                  
+    {'(Intercept)'                   }    
+    {'Gender_female'                 }    
+    {'Valence_negative'              }    
+    {'Gender_female:Valence_negative'}    
+
+
+    Estimate  
+    -0.0050219
+      0.015848
+     0.0089207
+    -0.0064197
+
+
+    SE       
+     0.011514
+     0.011174
+    0.0033284
+    0.0018348
+
+
+    tStat   
+    -0.43616
+      1.4183
+      2.6802
+     -3.4988
+
+
+    DF  
+    4572
+    4572
+    4572
+    4572
+
+
+    pValue    
+       0.66274
+       0.15618
+     0.0073844
+    0.00047187
+
+
+    Lower     
+     -0.027595
+    -0.0060586
+     0.0023955
+     -0.010017
+
+
+    Upper     
+      0.017551
+      0.037754
+      0.015446
+    -0.0028225
+
+Random effects covariance parameters (95% CIs):
+Group: Participant (60 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2              
+    {'(Intercept)'}    
+
+
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.085379
+
+
+    Lower   
+    0.071033
+
+
+    Upper  
+    0.10262
+
+Group: Picture (88 Levels)
+    Name1              
+    {'(Intercept)'}    
+
+
+    Name2              
+    {'(Intercept)'}    
+
+
+    Type       
+    {'std'}    
+
+
+    Estimate
+    0.026052
+
+
+    Lower   
+    0.021038
+
+
+    Upper   
+    0.032261
+
+Group: Error
+    Name           
+    {'Res Std'}    
+
+
+    Estimate
+    0.12349 
+
+
+    Lower  
+    0.12095
+
+
+    Upper  
+    0.12609
 
 

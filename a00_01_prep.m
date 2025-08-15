@@ -42,9 +42,13 @@ sam.ValenceStr = string(sam.Valence);
 aat_male = aat(aat.Gender == 'male', :);
 aat_female = aat(aat.Gender == 'female', :);
 
-% Create tables for aat data for male and female participants separately
+% Create tables for aat data for pleasant and unpleasant participants separately
 aat_pos = aat(aat.Valence == 'positive', :);
 aat_neg = aat(aat.Valence == 'negative', :);
+
+% Create tables for aat data for congruent and incongruent participants separately
+aat_con = aat(aat.Condition == 'congruent', :);
+aat_incon = aat(aat.Condition == 'incongruent', :);
 
 % Create tables for survey for pleasant and unpleasant stimuli separately
 sam_pos = sam(sam.Valence == 'positive', :);
@@ -80,6 +84,16 @@ all.dominance_mean_this(isMale) = all.dominance_mean_male(isMale);
 % Create tables for all data for male and female participants separately
 all_male = all(all.Gender == 'male', :);
 all_female = all(all.Gender == 'female', :);
+
+% Create tables for all data for congruent and incongruent participants separately
+all_con = all(all.Condition == 'congruent', :);
+all_incon = all(all.Condition == 'incongruent', :);
+
+% Create tables for congruent data by valence or gender
+all_con_pos = all_con(all_con.Valence == 'positive', :);
+all_con_neg = all_con(all_con.Valence == 'negative', :);
+all_con_male = all_con(all_con.Gender == 'male', :);
+all_con_female = all_con(all_con.Gender == 'female', :);
 
 % Define color palette used in all figures to differentiate women's and
 % men's data
